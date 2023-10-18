@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <h1>HOLAAAA</h1>
+    <script>
+
+console.clear();
+
+/*class Usuario {
+    //definir atributos
+    #documentoUsuario;
+    #nombreUsuario;
+
+    //definir funcion constructora
+    constructor (){
+        this.#documentoUsuario = '';
+        this.#nombreUsuario = '';
+    }
+
+    presentarUsuario(){
+        console.log(`Hola, me llamo ${this.#nombreUsuario} y mi ` + 
+                `documento es ` + this.imprimirDocumento());
+    };
+
+    imprimirDocumento(){
+        return this.#documentoUsuario;
+    };
+
+    set setDocumentoUsuario(value) {
+        this.#documentoUsuario = value;
+    }
+
+    get getDocumentoUsuario(){
+        return this.#documentoUsuario;
+    }
+
+    set setNombreUsurio(value){
+        this.#nombreUsuario = value;
+    }
+
+    get getNombreUsuario(){
+        return this.#nombreUsuario;
+    }
+
+};
+
+Reflect.preventExtensions(Usuario);
+
+//crear instancia de clase
+const usuario1 = new Usuario();
+
+Reflect.preventExtensions(usuario1);
+
+console.log({usuario1});
+
+usuario1.setDocumentoUsuario = '1111';
+usuario1.setNombreUsurio = 'Martha';
+
+console.log (usuario1.getDocumentoUsuario + '  ' + usuario1.getNombreUsuario);
+
+usuario1.presentarUsuario();*/
+
+console.log(`/////////////// Numero 1 //////////`)
+
+
+class Automovil {
+    #Marca;
+    #Linea;
+    #Modelo;
+    #Cilindraje;
+    #Precio;
+
+    constructor () {
+        this.#Marca = '';
+        this.#Linea = '';
+        this.#Modelo = '';
+        this.#Cilindraje = '';
+        this.#Precio = '';
+    }
+
+    nivelGasolina(){
+      console.log( `Nivel de gasolina es ` + Math.floor(Math.random() * 101) + `%`);
+        }
+
+    tecnoMecanica(){
+        let d = new Date();
+        let n = d.getFullYear();
+
+        if (n-this.#Modelo < 5) {
+            console.log(`no cesesita tecno`);
+        } else {console.log(`necesita tecno ya que el automovil es del ${this.#Modelo}`);
+
+        }
+    }
+
+    imprimirInformacion(){
+        return this.#Marca;
+    };
+
+    set setMarca(value) {
+        this.#Marca = value;
+    }
+
+    get getMarca(){
+        return this.#Marca;
+    }
+
+    set setLinea(value){
+        this.#Linea = value;
+    }
+
+    get getLinea(){
+        return this.#Linea;
+    }
+
+    set setModelo(value) {
+        this.#Modelo = value;
+    }
+
+    get getModelo(){
+        return this.#Modelo;
+    }
+
+    set setCilindraje(value){
+        this.#Cilindraje = value;
+    }
+
+    get getCilindraje(){
+        return this.#Cilindraje;
+    }
+
+    set setPrecio(value){
+        this.#Precio = value;
+    }
+
+    get getPrecio(){
+        return this.#Precio;
+    }    
+};
+
+class Automovilseda extends Automovil {
+     #numeroPasajeros;
+     #tipoDeCaja;
+
+     constructor () {
+        super();
+        this.#numeroPasajeros = '';
+        this.#tipoDeCaja = '';
+     }
+    
+     set setNumeroPasajeros(value){
+        this.#numeroPasajeros = value;
+    }
+
+    get getNombreInstructor(){
+        return this.#numeroPasajeros;
+    }
+
+    set setTipoDeCaja(value){
+        this.#tipoDeCaja = value;
+    }
+
+    get getTipoDeCaja(){
+        return this.#tipoDeCaja;
+    }  
+
+    cinturones(){
+                 console.log(`El automovil ${this.getMarca} tiene ` +
+                  `4 Cinturones y trasporta ${this.#numeroPasajeros} pasajeros`);
+    }
+};
+
+Reflect.preventExtensions(Automovil);
+
+//crear instancia de clase
+const Automovil1 = new Automovil();
+
+console.log({Automovil1});
+
+Automovil1.setMarca = 'Nissan';
+Automovil1.setLinea = '4x4';
+Automovil1.setModelo = 2020;
+Automovil1.setCilindraje = '950000';
+Automovil1.setPrecio = 1500000;
+
+
+Automovil1.nivelGasolina();
+Automovil1.tecnoMecanica();
+
+const Automovil2 = new Automovilseda();
+
+console.log({Automovil2});
+
+Automovil2.setMarca = 'BMW';
+Automovil2.setLinea = '35';
+Automovil2.setModelo = 2020;
+Automovil2.setCilindraje = '150c';
+Automovil2.setPrecio = 15000000;
+Automovil2.setNumeroPasajeros = '5';
+Automovil2.getTipoDeCaja = 'manual';
+
+Automovil2.cinturones();
+
+
+console.log(`/////////////// Numero 2 //////////`);
+
+class Instructor {
+    #NombreInstructor;
+    #LineaInstructor;
+    #JornadaInstructor;
+
+constructor () {
+    this.#NombreInstructor = '';
+    this.#LineaInstructor = '';
+    this.#JornadaInstructor = '';
+}
+
+    lineaDeFormacionInstructor(){
+            switch (this.#LineaInstructor) {
+                case `software`: 
+                    return(`Pertenece a Análisis y desarrollo de ${this.#LineaInstructor}`);
+                    break;
+                case `hardware`:
+                    return(`Pertenece a Administración de redes ${this.#LineaInstructor}`);
+                    break;
+                default: `cualquier otra`
+                    return(`no se tiene registro calificado 
+                            para esas líneas tecnológicas`);
+                    break; 
+                   }
+               }
+
+    imprimirInformacionInstructor(){
+        return this.#NombreInstructor;
+    };
+
+    set setNombreInstructor(value) {
+        this.#NombreInstructor = value;
+    }
+
+    get getNombreInstructor(){
+        return this.#NombreInstructor;
+    }
+
+    set setLineaInstructor(value) {
+        this.#LineaInstructor = value;
+    }
+
+    get getLineaInstructor(){
+        return this.#LineaInstructor;
+    }
+
+    set setJornadaInstructor(value){
+        this.#JornadaInstructor = value;
+    }
+
+    get getJornadaInstructor(){
+        return this.#JornadaInstructor;
+    }
+};
+
+Reflect.preventExtensions(Instructor);
+
+const Instructor1 = new Instructor();
+
+console.log({Instructor1});
+
+Instructor1.setNombreInstructor = 'Julian gomez';
+Instructor1.setLineaInstructor = 'software';
+Instructor1.setJornadaInstructor = 'Tarde';
+
+console.log(Instructor1.lineaDeFormacionInstructor());
+
+const Instructor2 = new Instructor();
+
+console.log({Instructor2});
+
+Instructor2.setNombreInstructor = 'David Gomez';
+Instructor2.setLineaInstructor = 'hardware';
+Instructor2.setJornadaInstructor = 'Mañana';
+
+console.log(Instructor2.lineaDeFormacionInstructor());
+
+console.log(`//////////////// Numero 3 //////////`);
+
+class Restaurante {
+    #plato;
+    #cantidad;
+    #precioplato;
+
+constructor (){
+    this.#plato;
+    this.#cantidad;
+    this.#precioplato;
+}
+
+valorPedido(){
+      const precioTotal = this.#cantidad * this.#precioplato;
+      if (precioTotal >= 50000) {
+          const descuento = 10
+          const descuentoPrecioTotal = (descuento/100)*precioTotal
+          const cuentaFinal = precioTotal - descuentoPrecioTotal
+          console.log(`el valor a pagar es ${precioTotal} ` + 
+          `tienes un descuento de ${descuento} %` + 
+          ` tu total a pagar es ${cuentaFinal}`)
+      } else {
+        console.log(`el total a pagar es ${precioTotal}\n ` + 
+        `para aplicar descuento yu compra tiene que ser mayor a 50k`)
+      }
+   }
+
+   imprimirInformacionPlato(){
+        return this.#plato;
+    };
+
+    set setplato(value) {
+        this.#plato = value;
+    }
+
+    get getplato(){
+        return this.#plato;
+    }
+
+    set setcantidad(value) {
+        this.#cantidad = value;
+    }
+
+    get getcantidad(){
+        return this.#cantidad;
+    }
+
+    set setprecioplato(value){
+        this.#precioplato = value;
+    }
+
+    get getprecioplato(){
+        return this.#precioplato;
+    }
+};
+
+class RestauranteDomicilio extends Restaurante {
+     #tiempoDeEntrega;
+     #valorDomicilio;
+
+     constructor () {
+        super();
+        this.#tiempoDeEntrega = '';
+        this.#valorDomicilio = '';
+     }
+    
+     set setTiempoDeEntrega(value){
+        this.#tiempoDeEntrega = value;
+    }
+
+    get getTiempoDeEntrega(){
+        return this.#tiempoDeEntrega;
+    }
+
+    set setValorDomiciolio(value){
+        this.#valorDomicilio = value;
+    }
+
+    get getValorDomiciolio(){
+        return this.#valorDomicilio;
+    }
+    
+
+   informacionRestaurante () {
+        console.log(`Nombre del restaurante:${nombreDelRestaurante}
+        Tipo comida:AREPA,PIZZA,PERRO,HAMBURGUESA,EMPANADAS Y CHORIZO
+        Lugar centro de mosquera al lado de la iglesia
+        Hora: todos los dias de 9am hasta 10pm
+        TE ESPERAMOS  `)
+    }
+    totalConDomicilio (){
+      const precioTotal = this.getcantidad * this.getprecioplato + this.#valorDomicilio;
+      if (precioTotal >= 50000) {
+          const descuento = 10
+          const descuentoPrecioTotal = (descuento/100)*precioTotal
+          const cuentaFinal = precioTotal - descuentoPrecioTotal 
+          const masDomicilio = cuentaFinal 
+          console.log(`total de su pedido es  ${masDomicilio} ` + 
+          `con un descuento de  ${descuentoPrecioTotal}` + 
+          ` incluyendo el valor del domicilio ${this.#valorDomicilio}`)
+      } else { 
+        console.log(`el total de su pedido es  ${precioTotal}\n ` + 
+        `porque incluye ${this.#valorDomicilio} del domicilio` + 
+        ` para aplicar el descuento su compra tiene que ser mayor a 50k`)
+      }
+  }
+    
+}
+
+
+let nombreDelRestaurante = `Don chucho`;
+
+Reflect.preventExtensions(Restaurante);
+
+const Plato1 = new Restaurante();
+
+console.log({Plato1});
+
+Plato1.setplato = 'pizza';
+Plato1.setcantidad = '15';
+Plato1.setprecioplato = 5000;
+
+console.log(Plato1.valorPedido());
+
+const Plato2 = new RestauranteDomicilio();
+
+console.log({Plato2});
+
+Plato2.setplato = 'perro caliente';
+Plato2.setcantidad = '5';
+Plato2.setprecioplato = 10000;
+Plato2.setTiempoDeEntrega = '30minutos'
+Plato2.setValorDomiciolio = 1500
+
+
+console.log(Plato2.totalConDomicilio());
+
+Plato2.informacionRestaurante();
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
